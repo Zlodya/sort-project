@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <title>Сортировка выбором</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="logo" href="index.html" aria-label="На главную">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+        <span>главная</span>
+      </a>
+      <div class="nav-links">
+        <a href="bubble.html">Пузырьковая</a>
+        <a href="insertion.html">Вставками</a>
+        <a href="selection.html" class="active">Выбором</a>
+        <a href="quick.html">Быстрая</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="page-head">
+      <div class="reveal">
+        <span class="lab"><span>03</span> / минимумы</span>
+      </div>
+      <h1 class="reveal" data-delay="60">Сортировка <span class="grad">выбором</span></h1>
+      <p class="lead reveal" data-delay="120">
+        Каждый проход находит минимальный элемент в неотсортированной части
+        и ставит его в начало. В итоге левая часть растёт, уже упорядоченная.
+      </p>
+    </header>
+
+    <section class="section">
+      <div class="reveal">
+        <span class="section-sub">визуализация</span>
+      </div>
+      <div class="vis-wrap reveal" data-delay="80">
+        <div class="vis-top">
+          <div class="vis-status"><span class="pulse"></span> <span class="status-text">…</span></div>
+          <div class="vis-controls">
+            <button class="btn" data-action="reset">Перемешать</button>
+            <button class="btn" data-action="play">Старт</button>
+            <button class="btn" data-action="pause">Пауза</button>
+            <select class="speed">
+              <option value="1200">Медленно</option>
+              <option value="500" selected>Нормально</option>
+              <option value="150">Быстро</option>
+              <option value="35">Мгновенно</option>
+            </select>
+          </div>
+        </div>
+        <div class="sort-area">
+          <div class="bars-stage"></div>
+          <div class="steps-panel">
+            <div class="steps-header"><span>этапы</span><b class="steps-count">0 / 0</b></div>
+            <div class="steps-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="reveal">
+        <span class="section-sub">как работает</span>
+      </div>
+      <h2 class="section-title reveal" data-delay="60">Разбор алгоритма</h2>
+      <div class="info-grid">
+        <div class="info-card reveal" data-delay="80">
+          <span class="tag">Алгоритм</span>
+          <ol>
+            <li>Начинаем с первой позиции — отсортированная часть пуста.</li>
+            <li>Ищем минимальный элемент в оставшейся части.</li>
+            <li>Меняем его местами с первым элементом неотсортированной части.</li>
+            <li>Отсортированная часть растёт на один элемент.</li>
+            <li>Повторяем, пока не останется один элемент.</li>
+          </ol>
+        </div>
+
+        <div class="info-card reveal" data-delay="160">
+          <span class="tag">Где встречается</span>
+          <ul>
+            <li>построение класса по росту — каждый раз находят самого низкого и ставят первым;</li>
+            <li>раскладка монет по номиналу — сначала самая мелкая, потом следующая;</li>
+            <li>подбор книг от тонкого к толстому на полке — ищут самый тонкий том и ставят в начало;</li>
+            <li>выбор наименьшего из группы — самое полезное свойство алгоритма.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="reveal">
+        <span class="section-sub">характеристики</span>
+      </div>
+      <h2 class="section-title reveal" data-delay="60">Сложность</h2>
+      <div class="table-wrap reveal" data-delay="120">
+        <table class="specs">
+          <thead>
+            <tr><th>Случай</th><th>Время</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Лучший</td><td><b>O(n²)</b> — сравнений всегда одинаково</td></tr>
+            <tr><td>Средний</td><td><b>O(n²)</b></td></tr>
+            <tr><td>Худший</td><td><b>O(n²)</b></td></tr>
+            <tr><td>Память</td><td><b>O(1)</b> — на месте, обменов всего O(n)</td></tr>
+            <tr><td>Стабильность</td><td class="nfo">нет</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    сортировки, визуально
+  </footer>
+
+  <script src="js/visualizer.js"></script>
+  <script src="js/algorithms.js"></script>
+  <script>SortVis.init({ size: 18, gen: genSelection });</script>
+  <script src="js/site.js"></script>
+</body>
+</html>

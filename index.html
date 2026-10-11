@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <title>Алгоритмы сортировки · визуально</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="logo" href="index.html" aria-label="На главную">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+        <span>главная</span>
+      </a>
+      <div class="nav-links">
+        <a href="bubble.html">Пузырьковая</a>
+        <a href="insertion.html">Вставками</a>
+        <a href="selection.html">Выбором</a>
+        <a href="quick.html">Быстрая</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="reveal">
+        <span class="badge"><i></i>Изучаем сортировки · визуально</span>
+      </div>
+      <h1 class="reveal" data-delay="80">Алгоритмы <span class="grad">сортировки</span></h1>
+      <p class="lead reveal" data-delay="160">
+        Упорядочивание данных — фундамент всей информатики. Смотрите, как
+        работают сортировки, шаг за шагом, на живых прямоугольниках.
+      </p>
+    </section>
+
+    <div class="window hero-vis reveal" data-delay="260">
+      <div class="window-top">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="path">~/sorting · quicksort · demo</span>
+      </div>
+      <div class="hero-stage" id="heroStage"></div>
+    </div>
+
+    <section class="manifesto">
+      <div class="inner reveal">
+        <span class="lab"><span>/</span> что такое сортировка</span>
+        <p>
+          Если вы хоть раз сортировали контакты в телефоне, файлы по размеру
+          или список в Excel — вы пользовались сортировкой. <strong>Сортировка
+          — это приведение данных к порядку.</strong>
+        </p>
+        <p>
+          Порядок ускоряет всё: в отсортированном списке информация находится
+          мгновенно, а недубликаты и статистика считаются за один проход.
+          Именно поэтому сортировку называют <strong>основой алгоритмов</strong> —
+          почти любая сложная программа полагается на неё.
+        </p>
+        <p>
+          Но сортировать можно по-разному: кто-то сравнивает соседей, кто-то
+          вставляет элементы на место, кто-то «разделяй и властвуй».
+          Ниже — четыре фундаментальных способа и <em>живая картинка</em> каждого.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="reveal">
+        <span class="section-sub">01 — выбор алгоритма</span>
+      </div>
+      <h2 class="section-title reveal" data-delay="60">Выберите сортировку</h2>
+      <p class="lead reveal" data-delay="120" style="margin-bottom: 34px;">
+        Каждая страница — пошаговая анимация: прямоугольники сортируются справа
+        налево, а активный этап подсвечивается.
+      </p>
+
+      <div class="grid">
+        <a class="algo-card reveal" data-delay="60" data-n="01" href="bubble.html">
+          <div>
+            <span class="num">ФУНДАМЕНТ</span>
+            <div class="title">Пузырьковая</div>
+            <div class="desc">Соседи сравниваются и меняются местами —
+              большие значения «всплывают» к концу. Самая простая для старта.</div>
+          </div>
+          <span class="more">Открыть <span class="arr">→</span></span>
+        </a>
+
+        <a class="algo-card reveal" data-delay="120" data-n="02" href="insertion.html">
+          <div>
+            <span class="num">ВСТАВКИ</span>
+            <div class="title">Вставками</div>
+            <div class="desc">Каждый элемент встраивается в отсортированную
+              часть — как карта в руку. Неоценима для небольших списков.</div>
+          </div>
+          <span class="more">Открыть <span class="arr">→</span></span>
+        </a>
+
+        <a class="algo-card reveal" data-delay="180" data-n="03" href="selection.html">
+          <div>
+            <span class="num">МИНИМУМЫ</span>
+            <div class="title">Выбором</div>
+            <div class="desc">Находит минимальный элемент и ставит его на
+              место. Минимум перестановок, простая логика.</div>
+          </div>
+          <span class="more">Открыть <span class="arr">→</span></span>
+        </a>
+
+        <a class="algo-card reveal" data-delay="240" data-n="04" href="quick.html">
+          <div>
+            <span class="num">РАЗДЕЛЯЙ И ВЛАСТВУЙ</span>
+            <div class="title">Быстрая</div>
+            <div class="desc">Делит массив вокруг опорного элемента и
+              сортирует части рекурсивно. Стандарт индустрии.</div>
+          </div>
+          <span class="more">Открыть <span class="arr">→</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="reveal">
+        <span class="section-sub">02 — критерии</span>
+      </div>
+      <h2 class="section-title reveal" data-delay="60">По чему выбирают</h2>
+      <div class="table-wrap reveal" data-delay="120">
+        <table class="specs">
+          <thead>
+            <tr>
+              <th>Критерий</th>
+              <th>Что означает</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Время (О-большое)</td><td>Как растёт число операций при увеличении размера данных n.</td></tr>
+            <tr><td>Память</td><td>Сколько дополнительной памяти нужно, кроме самого списка.</td></tr>
+            <tr><td>Стабильность</td><td>Сохраняется ли порядок равных элементов.</td></tr>
+            <tr><td>Адаптивность</td><td>Ускоряется ли алгоритм на почти отсортированных данных.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="reveal">
+        <span class="section-sub">03 — сложность</span>
+      </div>
+      <h2 class="section-title reveal" data-delay="60">Сравнение алгоритмов</h2>
+      <div class="table-wrap reveal" data-delay="120">
+        <table class="specs wide">
+          <thead>
+            <tr>
+              <th>Алгоритм</th><th>Лучший</th><th>Средний</th><th>Худший</th><th>Память</th><th>Стабильный</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Пузырьковая</td><td>O(n)</td><td>O(n²)</td><td>O(n²)</td><td>O(1)</td><td>да</td></tr>
+            <tr><td>Вставками</td><td>O(n)</td><td>O(n²)</td><td>O(n²)</td><td>O(1)</td><td>да</td></tr>
+            <tr><td>Выбором</td><td>O(n²)</td><td>O(n²)</td><td>O(n²)</td><td>O(1)</td><td>нет</td></tr>
+            <tr><td>Быстрая</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n²)</td><td>O(log n)</td><td>нет</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    сортировки, визуально
+  </footer>
+
+  <script src="js/algorithms.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>
